@@ -1,0 +1,14 @@
+PARVEZ APK তৈরি — ফোন থেকে Cloud Build
+
+এই ZIP-এ Android Studio project এবং GitHub Actions workflow যোগ করা আছে। এই চ্যাটের কম্পিউটিং পরিবেশে Android SDK/Gradle নেই, তাই এখানে APK compile করা সম্ভব হয়নি। GitHub-এর cloud runner দিয়ে APK বানানোর workflow প্রস্তুত করা হয়েছে।
+
+যা লাগবে: একটি GitHub account এবং ইন্টারনেট।
+
+ধাপ:
+1. ZIP extract করে ভিতরের PARVEZ_Android ফোল্ডারের সব ফাইল GitHub-এ নতুন repository-তে upload করুন (repository root-এ app, build.gradle, settings.gradle এবং .github ফোল্ডার থাকবে)।
+2. GitHub repository-তে Actions tab খুলুন। প্রথমবার workflow অনুমোদন করতে বললে I understand my workflows, go ahead and enable them চাপুন।
+3. বাম পাশে Build PARVEZ APK workflow খুলে Run workflow চাপুন।
+4. কাজ শেষ হলে ওই run-এর নিচে Artifacts থেকে PARVEZ-debug-apk ডাউনলোড করুন।
+5. ZIP extract করে app-debug.apk ফোনে Install করুন। Android চাইলে এই উৎস থেকে Install unknown apps অনুমতি দিন।
+
+নোট: এটি debug APK; ব্যক্তিগত ফোনে ইনস্টল করে ব্যবহার করার জন্য। অ্যাপের হিসাব ফোনের নিজস্ব storage-এ থাকবে। অ্যাপ uninstall করলে বা ফোন হারালে ডেটা হারাতে পারে—অ্যাপের রিপোর্ট থেকে নিয়মিত JSON backup রাখুন।
